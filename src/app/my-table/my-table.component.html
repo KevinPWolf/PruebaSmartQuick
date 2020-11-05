@@ -1,0 +1,38 @@
+<table datatable [dtOptions]="dtOptions" class="row-border hover">
+  <thead>
+    <tr>
+      <th>athlete</th>
+      <th>age</th>
+      <th>country</th>
+      <th>year</th>
+      <th>date</th>
+      <th>sport</th>
+      <th>gold</th>
+      <th>silver</th>
+      <th>bronze</th>
+      <th>total</th>
+    </tr>
+  </thead>
+  <tbody *ngIf="persons?.length != 0">
+      <tr *ngFor="let person of persons">
+          <td>{{ person.athlete }}</td>
+          <td>{{ person.age }}</td>
+          <td>{{ person.country }}</td>
+          <td>{{ person.year }}</td>
+          <td>{{ person.date }}</td>
+          <td>{{ person.sport }}</td>
+          <td>{{ person.gold }}</td>
+          <td>{{ person.silver }}</td>
+          <td>{{ person.bronze }}</td>
+          <td>{{ person.total }}</td>
+      </tr>
+  </tbody>
+  <tbody *ngIf="persons?.length == 0">
+    <tr>
+      <td colspan="3" class="no-data-available">No data!</td>
+    </tr>
+  <tbody>
+</table>
+
+
+  

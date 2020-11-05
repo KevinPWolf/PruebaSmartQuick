@@ -1,0 +1,29 @@
+<div class="displayTable">
+    <div class="displayTableCell">
+  
+      <div class="authBlock">
+        <h3>Ingresa</h3>
+        <div class="formGroup">
+          <input type="text" class="formControl" placeholder="Correo Electronico" [(ngModel)]="email" required>
+        </div>
+  
+        <div class="formGroup">
+          <input type="password" class="formControl" placeholder="Contraseña" [(ngModel)]="password" required>
+        </div>
+  
+        <!-- Calling SignIn Api from AuthService -->
+        <div class="formGroup">
+          <input type="button" class="btn btnPrimary" value="Ingresar" (click)="authService.SignIn(email, password)">
+        </div>
+  
+        <div class="formGroup">
+          <span class="or"><span class="orInner">Or</span></span>
+        </div>
+  
+      <div class="redirectToLogin">
+        <span>No tienes una cuenta?<span class="redirect" routerLink="/sign-up"> Registrate!</span></span>
+      </div>
+  
+    </div>
+  </div>
+  

@@ -1,0 +1,43 @@
+<div class="displayTable">
+    <div class="displayTableCell">
+
+        <div class="authBlock">
+            <h3>Registro</h3>
+
+            <div class="formGroup">
+                <input type="text" class="formControl" placeholder="Nombre" [(ngModel)]="name" required>
+            </div>
+
+            <div class="formGroup">
+                <ul class="list-group">
+                    <li class="list-group-item" *ngFor="let type of types">
+                        <input type="radio" [(ngModel)]="radioSelected" name="list_name" value="{{type.value}}"
+                            (change)="onItemChange()" />
+                        {{type.name}}
+                    </li>
+                </ul>
+            </div>
+
+            <div class="formGroup">
+                <input type="text" class="formControl" placeholder="Correo Electronico" [(ngModel)]="email" required>
+            </div>
+
+            <div class="formGroup">
+                <input type="password" class="formControl" placeholder="Contraseña" [(ngModel)]="password" required>
+            </div>
+
+            <div class="formGroup">
+                <input type="button" class="btn btnPrimary" value="Registrar"
+                    (click)="authService.SignUp(email, password, name, radioSelected)">
+            </div>
+
+            <div class="formGroup">
+                <span class="or"><span class="orInner">Or</span></span>
+            </div>
+
+            <div class="redirectToLogin">
+                <span>Ya tienes una cuenta? <span class="redirect" routerLink="/sign-in">Ingresa!</span></span>
+            </div>
+        </div>
+
+    </div>
